@@ -1,0 +1,3 @@
+TODO: Draft structuring prompt.
+
+This prompt should instruct the structurer to organize facts into a titled outline with clear section headings and concise bullet points.

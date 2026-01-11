@@ -1,0 +1,67 @@
+{
+  "raw_text": "Q3 launch notes - draft, not cleaned\nRevenue was up 12% vs last quarter but refunds spiked around week 6\nNew onboarding flow shipped on 8/14; support tickets dropped after that\nMarketing says \"summer promo\" drove most signups, no hard proof\nOps flagged vendor invoice #A19 as late; possible fee next month\nCustomer churn highest in EU region, unclear if pricing or outages\nAction items: tighten refund policy, audit promo tracking, fix EU latency\nBudget: ask finance for +$25k for infra, pending approval\nNext review scheduled 9/30, bring metrics + incident timeline",
+  "facts": {
+    "facts": [
+      "Revenue was up 12% vs last quarter.",
+      "Refunds spiked around week 6.",
+      "New onboarding flow shipped on 8/14.",
+      "Support tickets dropped after 8/14.",
+      "Marketing says 'summer promo' drove most signups.",
+      "Ops flagged vendor invoice #A19 as late.",
+      "Possible fee next month due to late invoice.",
+      "Customer churn highest in EU region.",
+      "Unclear if churn due to pricing or outages.",
+      "Action item: tighten refund policy.",
+      "Action item: audit promo tracking.",
+      "Action item: fix EU latency.",
+      "Budget request: ask finance for +$25k for infra.",
+      "Budget request is pending approval.",
+      "Next review scheduled for 9/30.",
+      "Bring metrics and incident timeline to next review."
+    ]
+  },
+  "outline": {
+    "title": "Q3 Launch Notes",
+    "sections": [
+      {
+        "heading": "Performance and Operations",
+        "bullets": [
+          "Revenue up 12% versus last quarter.",
+          "Refund spike around week 6 noted.",
+          "Vendor invoice #A19 flagged as late."
+        ]
+      },
+      {
+        "heading": "Customer and Next Steps",
+        "bullets": [
+          "Onboarding flow shipped on 8/14; support tickets dropped.",
+          "EU churn is highest; cause unclear.",
+          "Next review scheduled 9/30 with metrics and timeline."
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "tldr": "Q3 performance improved but churn and refunds need investigation.",
+    "key_points": [
+      "Revenue increased 12% versus last quarter.",
+      "Support tickets declined after the 8/14 onboarding update.",
+      "EU churn is a current hotspot."
+    ],
+    "risks": [
+      "Refund spike may indicate product or policy issues.",
+      "Potential late fee tied to vendor invoice #A19."
+    ],
+    "recommendations": [
+      "Audit refund policy and root causes.",
+      "Investigate EU latency and pricing impact on churn.",
+      "Tighten promo tracking before next review."
+    ]
+  },
+  "validation": {
+    "coverage_score": 92,
+    "unsupported_claims": [],
+    "missing_topics": [],
+    "issues": []
+  }
+}

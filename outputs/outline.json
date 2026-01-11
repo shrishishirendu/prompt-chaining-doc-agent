@@ -1,0 +1,21 @@
+{
+  "title": "Q3 Launch Notes",
+  "sections": [
+    {
+      "heading": "Performance and Operations",
+      "bullets": [
+        "Revenue up 12% versus last quarter.",
+        "Refund spike around week 6 noted.",
+        "Vendor invoice #A19 flagged as late."
+      ]
+    },
+    {
+      "heading": "Customer and Next Steps",
+      "bullets": [
+        "Onboarding flow shipped on 8/14; support tickets dropped.",
+        "EU churn is highest; cause unclear.",
+        "Next review scheduled 9/30 with metrics and timeline."
+      ]
+    }
+  ]
+}

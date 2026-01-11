@@ -1,0 +1,3 @@
+TODO: Draft summarization prompt.
+
+This prompt should instruct the summarizer to produce a brief executive summary with key points, risks, and recommendations based only on the outline.

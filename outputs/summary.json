@@ -1,0 +1,17 @@
+{
+  "tldr": "Q3 performance improved but churn and refunds need investigation.",
+  "key_points": [
+    "Revenue increased 12% versus last quarter.",
+    "Support tickets declined after the 8/14 onboarding update.",
+    "EU churn is a current hotspot."
+  ],
+  "risks": [
+    "Refund spike may indicate product or policy issues.",
+    "Potential late fee tied to vendor invoice #A19."
+  ],
+  "recommendations": [
+    "Audit refund policy and root causes.",
+    "Investigate EU latency and pricing impact on churn.",
+    "Tighten promo tracking before next review."
+  ]
+}
