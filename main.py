@@ -7,6 +7,9 @@ import yaml
 from jsonschema import validate
 
 from agents.extractor import run_extractor
+from agents.structurer import run_structurer
+from agents.summarizer import run_summarizer
+from agents.validator import run_validator
 
 ROOT_DIR = Path(__file__).resolve().parent
 SCHEMAS_DIR = ROOT_DIR / "schemas"
@@ -24,7 +27,13 @@ def load_config() -> dict:
     return yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8")) or {}
 
 
-def build_placeholders(doc_text: str, facts: dict | None = None) -> dict:
+def build_placeholders(
+    doc_text: str,
+    facts: dict | None = None,
+    outline: dict | None = None,
+    summary: dict | None = None,
+    validation: dict | None = None,
+) -> dict:
     facts_payload = facts or {
         "facts": [
             "Revenue is reported up 12% versus last quarter.",
@@ -34,7 +43,7 @@ def build_placeholders(doc_text: str, facts: dict | None = None) -> dict:
         ]
     }
 
-    outline = {
+    outline_payload = outline or {
         "title": "Q3 Launch Notes",
         "sections": [
             {
@@ -56,7 +65,7 @@ def build_placeholders(doc_text: str, facts: dict | None = None) -> dict:
         ],
     }
 
-    summary = {
+    summary_payload = summary or {
         "tldr": "Q3 performance improved but churn and refunds need investigation.",
         "key_points": [
             "Revenue increased 12% versus last quarter.",
@@ -74,7 +83,7 @@ def build_placeholders(doc_text: str, facts: dict | None = None) -> dict:
         ],
     }
 
-    validation = {
+    validation_payload = validation or {
         "coverage_score": 92,
         "unsupported_claims": [],
         "missing_topics": [],
@@ -83,9 +92,9 @@ def build_placeholders(doc_text: str, facts: dict | None = None) -> dict:
 
     return {
         "facts": facts_payload,
-        "outline": outline,
-        "summary": summary,
-        "validation": validation,
+        "outline": outline_payload,
+        "summary": summary_payload,
+        "validation": validation_payload,
         "source_excerpt": doc_text.strip()[:240],
     }
 
@@ -136,7 +145,16 @@ def main() -> None:
     raw_text = SAMPLE_DOC.read_text(encoding="utf-8")
 
     facts = run_extractor(raw_text, config)
-    outputs = build_placeholders(raw_text, facts=facts)
+    outline = run_structurer(facts, config)
+    summary = run_summarizer(outline, config)
+    validation = run_validator(facts, outline, summary, config)
+    outputs = build_placeholders(
+        raw_text,
+        facts=facts,
+        outline=outline,
+        summary=summary,
+        validation=validation,
+    )
     validate_outputs(outputs)
     written = write_outputs(outputs, raw_text)
 

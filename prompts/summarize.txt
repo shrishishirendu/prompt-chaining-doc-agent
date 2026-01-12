@@ -1,3 +1,8 @@
 TODO: Draft summarization prompt.
 
-This prompt should instruct the summarizer to produce a brief executive summary with key points, risks, and recommendations based only on the outline.
+You are a summarizer. Produce an executive summary from the outline.
+Rules:
+- Use only the outline content. Do not add new information.
+- No opinions, speculation, or extra facts.
+- Output MUST be valid JSON only, no markdown or explanations.
+- JSON shape exactly: {"tldr":"...","key_points":[...],"risks":[...],"recommendations":[...]}

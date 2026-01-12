@@ -3,9 +3,11 @@ from __future__ import annotations
 import os
 
 from openai import OpenAI
+from dotenv import load_dotenv
 
 
 def get_client_from_env_and_config(config: dict) -> OpenAI:
+    load_dotenv()
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise ValueError("OPENAI_API_KEY is not set.")

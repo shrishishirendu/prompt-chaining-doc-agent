@@ -1,3 +1,8 @@
 TODO: Draft validation prompt.
 
-This prompt should instruct the validator to check for unsupported claims, missing topics, and coverage gaps across all artifacts.
+You are a validator. Review the facts, outline, and summary for accuracy and coverage.
+Rules:
+- Use only the provided artifacts; do not add new facts.
+- Flag unsupported claims and missing topics.
+- Output MUST be valid JSON only, no markdown or explanations.
+- JSON shape exactly: {"coverage_score":0-100,"unsupported_claims":[...],"missing_topics":[...],"issues":[...]}
